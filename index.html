@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dripped & Delicious Co. | Homemade Treats | Tulsa, OK</title>
+    <link rel="icon" type="image/x-icon" href="https://github.com/Best-Businesses/Dripped---Delicious-Co/raw/main/D%26D-Favicon.png">
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            position: relative;
+            min-height: 100vh;
+        }
+        
+        /* Background Image */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://github.com/Best-Businesses/Dripped---Delicious-Co/raw/main/D%26D-BG-1.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            z-index: -1;
+        }
+        
+        /* Reduced overlay for better background visibility */
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.1);
+            z-index: -1;
+        }
+        
+        /* Header Styles */
+        header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px 0;
+            background-color: rgba(41, 128, 185, 0.9); /* Bright blue with transparency */
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .logo-container {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        
+        .logo {
+            max-width: 450px;
+            width: 90%;
+            height: auto;
+        }
+        
+        .nav-container {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .nav-button {
+            background-color: #E91E63; /* Magenta */
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            font-size: 18px;
+            border-radius: 50px;
+            cursor: pointer;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        .nav-button:hover {
+            background-color: #D81B60; /* Darker magenta */
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+        }
+        
+        .email-button {
+            background-color: #2196F3; /* Bright blue */
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            font-size: 18px;
+            border-radius: 50px;
+            cursor: pointer;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        .email-button:hover {
+            background-color: #0D8BF2; /* Slightly darker blue */
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+        }
+        
+        /* Main Content Styles */
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        /* Semi-transparent cream-colored text boxes */
+        .intro-section, .contact-card, .contact-form-container {
+            background-color: rgba(255, 248, 240, 0.85); /* Cream color with 85% opacity */
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+            border: 1px solid rgba(233, 30, 99, 0.2); /* Magenta tint border */
+            backdrop-filter: blur(3px); /* Adds a subtle blur effect for depth */
+        }
+        
+        .intro-section {
+            text-align: center;
+            margin-bottom: 60px;
+            padding: 30px;
+        }
+        
+        .intro-section h1 {
+            font-size: 2.8rem;
+            color: #2980B9; /* Bright blue */
+            margin-bottom: 20px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        }
+        
+        .tagline {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #E91E63; /* Magenta */
+            margin-bottom: 15px;
+        }
+        
+        .description {
+            font-size: 1.2rem;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto 20px;
+        }
+        
+        .highlight {
+            color: #E91E63; /* Magenta */
+            font-weight: bold;
+        }
+        
+        /* Contact Info Section */
+        .contact-section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+        
+        .contact-card {
+            flex: 1;
+            min-width: 300px;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .contact-card h2 {
+            color: #2980B9; /* Bright blue */
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+        
+        .phone-number {
+            font-size: 1.8rem;
+            color: #E91E63; /* Magenta */
+            font-weight: bold;
+            margin: 15px 0;
+            display: block;
+            text-decoration: none;
+        }
+        
+        .phone-number:hover {
+            text-decoration: underline;
+            color: #D81B60; /* Darker magenta */
+        }
+        
+        .location {
+            font-size: 1.2rem;
+            color: #333;
+            margin-bottom: 25px;
+        }
+        
+        /* Contact Form Styles */
+        .contact-form-container {
+            padding: 40px;
+            margin-bottom: 60px;
+        }
+        
+        .contact-form-container h2 {
+            color: #2980B9; /* Bright blue */
+            margin-bottom: 30px;
+            font-size: 2rem;
+            text-align: center;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #333;
+        }
+        
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid rgba(41, 128, 185, 0.3); /* Blue tint */
+            border-radius: 8px;
+            font-size: 16px;
+            font-family: 'Arial', sans-serif;
+            background-color: rgba(255, 255, 255, 0.9);
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #E91E63; /* Magenta */
+            box-shadow: 0 0 0 2px rgba(233, 30, 99, 0.2);
+        }
+        
+        .form-group textarea {
+            height: 150px;
+            resize: vertical;
+        }
+        
+        .submit-btn {
+            background-color: #E91E63; /* Magenta */
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 18px;
+            border-radius: 50px;
+            cursor: pointer;
+            width: 100%;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+        
+        .submit-btn:hover {
+            background-color: #D81B60; /* Darker magenta */
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Footer Styles */
+        footer {
+            background-color: rgba(41, 128, 185, 0.9); /* Bright blue with transparency */
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #E91E63; /* Magenta */
+            color: white;
+            text-decoration: none;
+            padding: 12px 24px;
+            border-radius: 50px;
+            font-weight: bold;
+            margin: 20px 0;
+            transition: all 0.3s ease;
+        }
+        
+        .social-link:hover {
+            background-color: #D81B60; /* Darker magenta */
+            transform: translateY(-3px);
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .social-link img {
+            width: 24px;
+            height: 24px;
+            margin-right: 10px;
+            filter: brightness(0) invert(1); /* Make icon white */
+        }
+        
+        .copyright {
+            margin-top: 20px;
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .logo {
+                max-width: 350px;
+            }
+            
+            .intro-section h1 {
+                font-size: 2.2rem;
+            }
+            
+            .tagline {
+                font-size: 1.5rem;
+            }
+            
+            .contact-card {
+                min-width: 100%;
+            }
+            
+            .contact-form-container {
+                padding: 20px;
+            }
+            
+            .nav-container {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .logo {
+                max-width: 280px;
+            }
+            
+            .intro-section h1 {
+                font-size: 1.8rem;
+            }
+            
+            .tagline {
+                font-size: 1.3rem;
+            }
+            
+            .phone-number {
+                font-size: 1.5rem;
+            }
+            
+            .nav-button, .email-button {
+                padding: 10px 20px;
+                font-size: 16px;
+                width: 90%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Background Overlay -->
+    <div class="overlay"></div>
+    
+    <!-- Header Section -->
+    <header>
+        <div class="logo-container">
+            <img src="https://github.com/Best-Businesses/Dripped---Delicious-Co/raw/main/D%26D-Logo-1.png" alt="Dripped & Delicious Co. Logo" class="logo">
+        </div>
+        <div class="nav-container">
+            <a href="https://www.facebook.com/profile.php?id=61583880423520&sk=photos" target="_blank" class="nav-button">View My Work</a>
+            <a href="mailto:Michael.coyle0220@gmail.com" class="email-button">Email Us</a>
+        </div>
+    </header>
+    
+    <!-- Main Content -->
+    <main>
+        <!-- Introduction Section -->
+        <section class="intro-section">
+            <h1>Dripped & Delicious Co.</h1>
+            <p class="tagline">Sweet, salty & dripped to perfection ✨</p>
+            <p class="description">Homemade treats inspired by tradition. We create mouthwatering delights that bring joy to every occasion. From holiday favorites to everyday indulgences, our limited drops ensure each treat is made with care and attention to detail.</p>
+            <p class="description">Serving the <span class="highlight">Tulsa, OK area</span>. DM for orders or use our contact form below!</p>
+        </section>
+        
+        <!-- Contact Information Section -->
+        <section class="contact-section">
+            <div class="contact-card">
+                <h2>Contact Us</h2>
+                <p>Ready to order or have questions about our treats?</p>
+                <a href="tel:405-269-5016" class="phone-number">(405) 269-5016</a>
+                <p class="location">Serving the Tulsa, OK area</p>
+                <p>Click the "Email Us" button at the top or use the contact form below!</p>
+            </div>
+        </section>
+        
+        <!-- Contact Form Section -->
+        <section class="contact-form-container">
+            <h2>Send Us a Message</h2>
+            <form action="https://formsubmit.co/Michael.coyle0220@gmail.com" method="POST">
+                <!-- FormSubmit Configuration -->
+                <input type="hidden" name="_subject" value="New Contact from Dripped & Delicious Website">
+                <input type="hidden" name="_template" value="table">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_next" value="#">
+                
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Your Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <select id="subject" name="_subject" required>
+                        <option value="" disabled selected>Select a subject</option>
+                        <option value="Order Inquiry">Order Inquiry</option>
+                        <option value="Custom Order Request">Custom Order Request</option>
+                        <option value="Event/Catering Inquiry">Event/Catering Inquiry</option>
+                        <option value="General Question">General Question</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Your Message</label>
+                    <textarea id="message" name="message" placeholder="Tell us about your treat needs, event details, or any questions you have..." required></textarea>
+                </div>
+                
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+        </section>
+    </main>
+    
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-content">
+            <p>Follow us on Facebook to see our latest creations and limited drops!</p>
+            <a href="https://www.facebook.com/profile.php?id=61583880423520" target="_blank" class="social-link">
+                <img src="https://cdn-icons-png.flaticon.com/512/124/124010.png" alt="Facebook Icon">
+                Visit Our Facebook Page
+            </a>
+            <p class="copyright">© 2023 Dripped & Delicious Co. | Tulsa, OK | Homemade Treats Inspired by Tradition</p>
+        </div>
+    </footer>
+    
+    <script>
+        // Simple form submission feedback
+        document.querySelector('form').addEventListener('submit', function(e) {
+            const submitBtn = document.querySelector('.submit-btn');
+            const originalText = submitBtn.textContent;
+            
+            // Change button text to show submission in progress
+            submitBtn.textContent = 'Sending...';
+            submitBtn.disabled = true;
+            
+            // Revert after 3 seconds (in case of error)
+            setTimeout(() => {
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+            }, 3000);
+        });
+        
+        // Add smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Add click effect to buttons
+        const buttons = document.querySelectorAll('.nav-button, .email-button, .social-link, .submit-btn');
+        buttons.forEach(button => {
+            button.addEventListener('click', function(e) {
+                // Create a temporary ripple effect
+                const ripple = document.createElement('span');
+                const rect = this.getBoundingClientRect();
+                const size = Math.max(rect.width, rect.height);
+                const x = e.clientX - rect.left - size / 2;
+                const y = e.clientY - rect.top - size / 2;
+                
+                ripple.style.cssText = `
+                    position: absolute;
+                    border-radius: 50%;
+                    background: rgba(255, 255, 255, 0.5);
+                    transform: scale(0);
+                    animation: ripple 0.6s linear;
+                    width: ${size}px;
+                    height: ${size}px;
+                    top: ${y}px;
+                    left: ${x}px;
+                    pointer-events: none;
+                    z-index: 1;
+                `;
+                
+                this.style.position = 'relative';
+                this.style.overflow = 'hidden';
+                this.appendChild(ripple);
+                
+                setTimeout(() => {
+                    ripple.remove();
+                }, 600);
+            });
+        });
+        
+        // Add CSS for ripple animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes ripple {
+                to {
+                    transform: scale(4);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>
